@@ -1,5 +1,6 @@
 import requests
 from uuid import uuid4
+import os
 
 BASE_URI = "https://api.github.com"
 TOKEN = os.getenv("GITHUB_TOKEN")
