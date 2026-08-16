@@ -1,20 +1,8 @@
-import os
-import time
 import requests
+import time
 from http.client import responses
 from uuid import uuid4
-
-BASE_URI = "https://api.github.com"
-TOKEN = os.getenv("GITHUB_TOKEN")
-HEADERS = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json"}
-BAD_HEADERS = {"Authorization": "Bearer fake_token_lol", "Accept": "application/vnd.github+json"}
-OWNER = "justxki"
-REPO_NAME = "test-playground"
-REPO_URI = f"{BASE_URI}/repos/{OWNER}/{REPO_NAME}"
-ISSUES_URI = f"{REPO_URI}/issues"
-USER_URI = f"{BASE_URI}/user"
-USER_REPOS_URI = f"{USER_URI}/repos"
-
+from config import HEADERS, BAD_HEADERS, BASE_URI, OWNER, REPO_NAME, REPO_URI, ISSUES_URI, USER_URI, USER_REPOS_URI
 
 #def test_create_repo():
 #    repo_name = f"test-repo-{uuid4()}"

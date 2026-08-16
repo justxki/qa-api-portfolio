@@ -2,9 +2,7 @@ import requests
 from uuid import uuid4
 import os
 
-BASE_URI = "https://api.github.com"
-TOKEN = os.getenv("GITHUB_TOKEN")
-HEADERS = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json"}
+from config import HEADERS, BASE_URI
 
 def test_get_authenticated_user():
     response = requests.get(f"{BASE_URI}/user", headers=HEADERS)
