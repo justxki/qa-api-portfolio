@@ -5,3 +5,5 @@ def test_create_issue():
     response = github.create_issue("Test Title Name")
     assert response.status_code == 201
     assert response.json()["title"] == "Test Title Name"
+    assert response.json()["state"] == "open"
+    assert response.json()["number"] > 0
