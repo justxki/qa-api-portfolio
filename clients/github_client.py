@@ -13,3 +13,8 @@ class GithubClient:
         payload = {"title": title}
         response = requests.post(self.issues_uri, headers=self.headers, json=payload)
         return response
+
+    def close_issue(self, issue_number):
+        payload = {"state": "closed"}
+        response = requests.patch(f"{self.issues_uri}/{issue_number}", headers=self.headers, json=payload)
+        return response
